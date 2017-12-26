@@ -56,7 +56,7 @@ class DCGAN:
         self.GLose = tf.reduce_sum(self.GLosetemp)
         self.gTrain = tf.train.AdamOptimizer(learning_rate=0.0002,beta1=0.5).minimize(loss=self.GLose, var_list=self.genVar)
 
-        self.epoch=20
+        self.epoch=100
         self.writer = tf.summary.FileWriter('log')
         self.writer.add_graph(tf.get_default_graph())
         self.GSum=tf.summary.scalar("GLOSE",self.GLose)
